@@ -1,0 +1,382 @@
+%You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[12pt]{article}
+
+\usepackage{fancyhdr, amsmath, enumerate, url, ulem, polynom, subfig, amssymb, amsthm, verbatim, graphicx,hyperref, booktabs, comment}
+\usepackage{proof}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+\noindent{\bf #1: #2} \vspace{0.5em}
+\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Yujie Xu}
+\newcommand{\myandrew}{yujiex@andrew.cmu.edu}
+\newcommand{\myhwnum}{00}
+
+\newcommand{\fref}[1]{Figure \ref{#1}}
+\newcommand{\tref}[1]{Table \ref{#1}}
+\newcommand{\eref}[1]{Equation \ref{#1}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+ 
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{21-329}}
+
+%
+% The following macro is used to generate the header.
+%
+\newcommand{\lecture}[4]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \stepcounter{#1}
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+      \vbox{\vspace{2mm}
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill Lecture \arabic{#1}: #2  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {\it \hfill Instructor: #3 \quad Notes taken: Yujie Xu\hfill}}      
+       \hbox to 6.28in { {\it  \hfill Date: #4 \hfill} }
+      \vspace{2mm}}
+   \end{center}
+   \markboth{Lecture #1: #2}{Lecture \arabic{#1}: #2}
+}
+
+\newcommand{\hw}[4]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \stepcounter{#1}
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+      \vbox{\vspace{2mm}
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill HW \arabic{#1}: #2  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {\it \hfill Instructor: #3 \quad Notes taken: Yujie Xu\hfill}}      
+       \hbox to 6.28in { {\it \hfill Date: #4} }
+      \vspace{2mm}}
+   \end{center}
+   \markboth{Lecture #1: #2}{Lecture \arabic{#1}: #2}
+}
+%
+% The following is my command for comments
+%
+\newcommand{\claim}[1]{\par {\bf Claim }{#1}}
+\newcommand{\subclaim}[1]{\par {\bf Subclaim }{#1}}
+\newcommand{\hp}[1]{\par {\bf HP: }{#1}}
+\newcommand{\note}[1]{\par {\bf Note: }{#1}}
+\newcommand{\rmk}[1]{\par {\bf Remark: }{#1}}
+\newcommand{\que}[1]{\par {\bf Question: }{\it #1}}
+\newcommand{\ans}[1]{\par {\bf Answer: }{\it #1}}
+\newcommand{\eg}[1]{\par {\bf Examples: }{#1}}
+\newcommand{\wn}[1]{\par {\bf Warning: }{#1}}
+
+\begin{document}
+
+\medskip                        % Skip a "medium" amount of space
+                                % (latex determines what medium is)
+                                % Also try: \bigskip, \littleskip
+
+%
+% The following commands set up the lecnum (lecture number)
+% counter and make various numbering schemes work relative
+% to the lecture number.
+%
+\newcounter{lec}
+\renewcommand{\thepage}{\thelec-\arabic{page}}
+\renewcommand{\thesection}{\thelec.\arabic{section}}
+\renewcommand{\theequation}{\thelec.\arabic{equation}}
+\renewcommand{\thefigure}{\thelec.\arabic{figure}}
+\renewcommand{\thetable}{\thelec.\arabic{table}}
+
+% Use these for theorems, lemmas, proofs, etc.
+\newtheorem{theorem}{Theorem}[lec]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{uf}[theorem]{Useful Fact}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{recall}[theorem]{Recall}
+\newtheorem{fact}[theorem]{Fact}
+%\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}}
+%
+% Convention for citations is authors' initials followed by the year.
+% For example, to cite a paper by Leighton and Maggs you would type
+% \cite{LM89}, and to cite a paper by Strassen you would type \cite{S69}.
+% (To avoid bibliography problems, for now we redefine the \cite command.)
+% Also commands that create a suitable format for the reference list.
+\begin{comment}
+\renewcommand{\cite}[1]{[#1]}
+\def\beginrefs{\begin{list}%
+        {[\arabic{equation}]}{\usecounter{equation}
+         \setlength{\leftmargin}{2.0truecm}\setlength{\labelsep}{0.4truecm}%
+         \setlength{\labelwidth}{1.6truecm}}}
+\def\endrefs{\end{list}}
+\def\bibentry#1{\item[\hbox{[#1]}]}
+\end{comment}
+
+%Use this command for a figure; it puts a figure in wherever you want it.
+%usage: \fig{NUMBER}{SPACE-IN-INCHES}{CAPTION}
+\newcommand{\fig}[3]{
+			\vspace{#2}
+			\begin{center}
+			Figure \thelecnum.#1:~#3
+			\end{center}
+}
+
+\par Template adapted from CMU's 10725 Fall 2012 Optimization course
+taught by Geoff Gordon and Ryan Tibshirani.
+%%
+\begin{center}
+\textbf{Symbols}
+\par
+\maltese \quad Important\\
+@@ \quad un-finished
+\end{center}
+\pagebreak
+\begin{center}
+\Large{Note of Computational Geometry}
+\end{center}
+\lecture{lec}{Introduction, The Line Intersection Problem using
+  Sweepline}{Gary Miller}{Monday, Aug 31, 2015}
+\setcounter{section}{0}
+\section{Intro}
+\subsection{Course description from the syllabus}
+
+``How do you sort points in space? What does it even mean? This course
+takes the ideas of a traditional algorithms course, sorting,
+searching, selecting, graphs, and optimization, and extends them to
+problems on geometric inputs. We will cover many classical geometric
+construc- tions and novel algorithmic methods. Some of the topics to
+be covered are convex hulls, Delaunay triangulations, graph drawing,
+point location, geometric medians, polytopes, configuration spaces,
+computational topology, approximation algorithms, and others. This
+course is a natural extension to 15-451, for those who want to learn
+about algorithmic problems in higher dimensions.''
+
+Textbook: Computational Geometry: Algorithms and
+Applications~\cite{CG2008}.
+
+Traditional algorithm courses mainly discuss 1D problems, such as
+BST. The topics of this course contains the following main topics:
+\begin{itemize}
+\item Large dimensional problems
+\item The change of the nature of simple geometry problems when
+  dimension increases
+\end{itemize}
+The applications of computational geometry include:
+\begin{itemize}
+\item 2D: graphics
+\item high dimension: machine learning
+\end{itemize}
+The basic issues or standard computational problems that will be
+discussed in recent lectures include:
+\begin{itemize}
+\item Line segment intersection (sweepline algorithm, random
+  incremental algorithm)
+\item Convex Hull: given a set of points, compute the convex hull of
+  these points.
+\item 2D-LP
+\end{itemize}
+The standard geometry problems that will be discussed recently
+include:
+\begin{itemize}
+\item Line side test
+\item In circle test
+\end{itemize}
+First the abstract objects and their representation that will be used
+in this course are discussed and is listed in the \tref{tab:AO}
+\begin{table}[h!]
+\centering
+\caption{Abstract Object and Their Representation}
+\label{tab:AO}
+\begin{tabular}{@{}l p{5cm}l@{}}
+\toprule
+Absract Object & Representation                                                                        & Issue          \\ \midrule
+Real Number    & Float                                                                                 & Rounding Err   \\
+               & Bignum (with arbitrary precision, normally they use arbitrary length array of digits) & Memory Intense \\
+               & Computer Algebra (Symbolic Computation)                                               &                \\
+Point          & Pair of Real                                                                          &                \\
+Line           & Pair of Points                                                                        &                \\
+Line Segment   & Pair of Points                                                                        &                \\
+Triangle       & Tripple of Points                                                                     &                \\ \bottomrule
+\end{tabular}
+\end{table}
+\section{How to use points to generate object}
+Suppose $P_1, P_2, \dots P_k \in \omega^d$ where $P_k \in M$ is a
+d-dimensional vector space with each point being a $M$-dimensional
+point, the following combinations of points creates the linear
+subspace of the vector space and generates geometric objects:
+\begin{itemize}
+\item \emph{Linear Combination}: 
+$$Subspace = \sum_{i} \alpha_i \cdot P_i, \alpha_i \in \mathbb{R}$$ 
+
+For the $d = 2$ and $P_i \in \mathbb{R}^3$ case, the linear
+combination of $P_1$ and $P_2$ forms a plane with
+$\vec{OP_1}, \vec{OP_2}$ being the basis.
+
+\item \emph{Affine Combination}: 
+$$Plane = \sum_{i} \alpha_i \cdot P_i, s.t. \; \alpha_i \in \mathbb{R} \land
+\sum_{i} \alpha_i = 1$$ 
+
+For the $d = 2$ and $P_i \in \mathbb{R}^3$ case, the affine
+combination of $P_1$ and $P_2$ forms a line that passes $P_1, P_2$.
+
+\item \emph{Convex Combination}: 
+$$Body = \sum_{i} \alpha_i \cdot P_i, s.t. \; \alpha_i \in \mathbb{R} \land
+\sum_{i} \alpha_i = 1 \land \alpha_i \geq 0$$
+
+$S \subseteq \mathbb{R}^d$ is a convex set iff
+$\forall p, q \in S \;\ldotp, [p, q] \subseteq S$ (A set S in a vector
+space over R is called a convex set if the line segment joining any
+pair of points of S lies entirely in S~\cite{convexSetWA})
+
+For the $d = 2$ and $P_i \in \mathbb{R}^3$ case, the convex
+combination of $P_1$ and $P_2$ forms a line segment between
+$P_1, P_2$.
+
+\emph{Convex Closure/Hull: } The minimal convex set $S' \supseteq S$ 
+
+A subset $S$ of the plane is called convex if and only if for any pair
+of points $p, q \in S$ the line segment $\overline{pq}$ is completely
+contained in $S$. The convex hull CH(S) of a set S is the smallest
+convex set that contains S~\cite{CG2008}.
+
+\begin{theorem}
+  $CC(P_1 \dots P_k) = \{\alpha \in \mathbb{R} \mid \sum_{i} \alpha_i
+  = 1 \land \alpha_i \geq 0\}$
+
+  In convex geometry Carathéodory's theorem states that if a point x
+  of $\mathbb{R}^d$ lies in the convex hull of a set $P$, there is a
+  subset $P'$ of $P$ consisting of $d + 1$ or fewer points such that x
+  lies in the convex hull of $P'$.
+
+\end{theorem}
+\end{itemize}
+\section{Primitives}
+Problems related to geometry primitives
+\begin{enumerate}[1)]
+\item Test equality $p = q?$
+\item Line segment intersection in 2D
+
+  Let $L_1 = [P_1, P_2]$, $L_2 = [P_3, P_4]$, let
+  $P_i = \begin{pmatrix}x_i \\ y_i\end{pmatrix}$.
+
+  \begin{equation}\label{eq:lineSeg1}
+    L_1 \cap L_2 \neq 0 \iff (P_1 P_2)\begin{pmatrix}\alpha_1 \\
+      \alpha_2\end{pmatrix} = (P_3 P_4)\begin{pmatrix}\alpha_3 \\
+      \alpha_4\end{pmatrix}
+    \\\text{ and } \alpha_1 + \alpha_2 = \alpha_3 + \alpha_4 = 1 \text{ and }
+    \alpha_i \geq 0.
+  \end{equation}
+  If written in matrix form, \eref{eq:lineSeg1} becomes:
+  \begin{equation}\label{eq:lineSeg2}
+    \begin{pmatrix}
+      x_1 & x_2 & -x_3 & -x_4 \\
+      y_1 & y_2 & -y_3 & -y_4 \\
+      1 & 1 & 0 & 0 \\
+      0 & 0 & 1 & 1 
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}
+      \alpha_1\\
+      \alpha_2\\
+      \alpha_3\\
+      \alpha_4\\
+    \end{pmatrix}
+    = 
+    \begin{pmatrix}
+      0\\
+      0\\
+      1\\
+      1\\
+    \end{pmatrix}
+    \end{equation}
+    So the general process of solving the line segment intersection
+    problem is
+    \begin{enumerate}[{Step }I.]
+    \item Solve{eq:lineSeg2} with some solver
+    \item Check if $\forall i, \alpha_i \geq 0$
+    \end{enumerate}
+    There could be more than one solutions when $L_1$ and $L_2$
+    intersect in more than one point: the four point are collinear and
+    there is an overlay. But in terms of the problem, the solution is
+    still unique, since the solution is either True of False.
+    
+    \rmk{The good practice is make this line segment intersection test
+      be a sum-routine and call an existing solver to solve the
+      matrix. Don't try to inline the code}
+    
+    Some cases when the algorithm output False:
+    \begin{itemize}
+    \item $L_1$ and $L_2$ parallel but not collinear
+    \item the intersection is on the extension of the two line segment
+    \item the intersection is on one line segment and on the extension
+      of the other.
+    \end{itemize}
+
+\item Line side test
+  \begin{itemize}
+  \item input: three points in 2D: $P_1, P_2, P_3$
+  \item output: if $P_3$ is to the left of ray ${P_1P_2}$ 
+
+    One process of solving the problem: Subtract $P_1$ from both of the
+    other vectors.  Let $V_2 = P_2-P_14$ and $V_3 = P_3-P_1$.  Now the
+    cross product $V_2 \times V_3$ is the signed area of the
+    parallogram formed by $V_2$ and $V_3$.  This area is $>$ 0 if and
+    only if $P_3$ is to the left of ray $P_1 \mapsto P_2$.
+    
+    Alternatively, suppose $P_1 = O$ (the origin), then the signed
+    area of the parallogram formed by $\vec{P_1 P_2}, \vec{P_1, P_3}$
+    is 
+    \begin{equation}\label{eq:signArea}
+      \det\begin{pmatrix}
+        x_2 & x_3 \\
+        y_2 & y_3 \\
+      \end{pmatrix}
+    \end{equation}
+
+    \begin{equation}\label{eq:lineSideDet}
+      LHS = \det\begin{bmatrix}
+        x_1 & x_2 & x_2\\
+        y_1 & y_2 & y_2\\
+        1 & 1 & 1\\
+      \end{bmatrix}
+      =
+      det\begin{bmatrix}
+        x_1 & x_2 - x_1 & x_3 - x_1\\
+        y_1 & y_2 - y_1 & y_3 - y_1\\
+        1 & 0 & 0\\
+        \end{bmatrix}
+    \end{equation}
+    Just report the sign of determinant of LHS of
+    \eref{eq:lineSideDet}
+  \end{itemize}
+  \rmk{The good property of method 2 is that it can be generalized to
+    higher dimension easily: for a 4D space, the test checks the
+    determinant of a 4 by 4 matrix.}
+
+\item In circle test
+  \begin{itemize}
+  \item input: four points in 2D: $P_1, P_2, P_3, P_4$
+  \item output: if $P_4$ is in the circle of $(P_1, P_2, P_3)$
+  \end{itemize}
+\end{enumerate}
+\bibliographystyle{plain}
+\pagebreak
+\bibliography{Bibliography}
+\end{document}

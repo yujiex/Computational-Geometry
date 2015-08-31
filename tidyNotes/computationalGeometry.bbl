@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{CG2008}
+Mark de~Berg, Otgried Cheong, Marc van Kreveld, and Mark Overmars.
+\newblock {\em Computational Geometry : Algorithms and Applications}.
+\newblock Springer Berlin Heidelberg, 2008.
+
+\bibitem{convexSetWA}
+{Wolfram Research, Inc.}
+\newblock Convex set.
+\newblock web, August 2015.
+\newblock \url{http://mathworld.wolfram.com/ConvexSet.html}.
+
+\end{thebibliography}
