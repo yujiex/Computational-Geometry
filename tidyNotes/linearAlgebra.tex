@@ -1,0 +1,310 @@
+%You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[12pt]{article}
+
+\usepackage{fancyhdr, amsmath, enumerate, url, ulem, polynom, subfig,
+  amssymb, amsthm, verbatim, graphicx,hyperref, booktabs, comment}
+\usepackage{proof}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+\noindent{\bf #1: #2} \vspace{0.5em}
+\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Yujie Xu}
+\newcommand{\myandrew}{yujiex@andrew.cmu.edu}
+\newcommand{\myhwnum}{00}
+
+\newcommand{\fref}[1]{Figure \ref{#1}}
+\newcommand{\tref}[1]{Table \ref{#1}}
+\newcommand{\eref}[1]{Equation \ref{#1}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+ 
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{Lecture Note}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{15-456}}
+
+%
+% The following macro is used to generate the header.
+%
+\newcommand{\lecture}[4]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \stepcounter{#1}
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+      \vbox{\vspace{2mm}
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill Lecture \arabic{#1}: #2  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {\it \hfill Instructor: #3 \quad Notes taken: Yujie Xu\hfill}}      
+       \hbox to 6.28in { {\it  \hfill Date: #4 \hfill} }
+      \vspace{2mm}}
+   \end{center}
+   \markboth{Lecture #1: #2}{Lecture \arabic{#1}: #2}
+}
+
+\newcommand{\hw}[4]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \stepcounter{#1}
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+      \vbox{\vspace{2mm}
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill HW \arabic{#1}: #2  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {\it \hfill Instructor: #3 \quad Notes taken: Yujie Xu\hfill}}      
+       \hbox to 6.28in { {\it \hfill Date: #4} }
+      \vspace{2mm}}
+   \end{center}
+   \markboth{Lecture #1: #2}{Lecture \arabic{#1}: #2}
+}
+%
+% The following is my command for comments
+%
+\newcommand{\claim}[1]{\par {\bf Claim }{#1}}
+\newcommand{\subclaim}[1]{\par {\bf Subclaim }{#1}}
+\newcommand{\hp}[1]{\par {\bf HP: }{#1}}
+\newcommand{\note}[1]{\par {\bf Note: }{#1}}
+\newcommand{\rmk}[1]{\par {\bf Remark: }{#1}}
+\newcommand{\que}[1]{\par {\bf Question: }{\it #1}}
+\newcommand{\ans}[1]{\par {\bf Answer: }{\it #1}}
+\newcommand{\eg}[1]{\par {\bf Examples: }{#1}}
+\newcommand{\wn}[1]{\par {\bf Warning: }{#1}}
+
+\begin{document}
+
+\medskip                        % Skip a "medium" amount of space
+                                % (latex determines what medium is)
+                                % Also try: \bigskip, \littleskip
+
+%
+% The following commands set up the lecnum (lecture number)
+% counter and make various numbering schemes work relative
+% to the lecture number.
+%
+\newcounter{lec}
+\renewcommand{\thepage}{\thelec-\arabic{page}}
+\renewcommand{\thesection}{\thelec.\arabic{section}}
+\renewcommand{\theequation}{\thelec.\arabic{equation}}
+\renewcommand{\thefigure}{\thelec.\arabic{figure}}
+\renewcommand{\thetable}{\thelec.\arabic{table}}
+
+% Use these for theorems, lemmas, proofs, etc.
+\newtheorem{theorem}{Theorem}[lec]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{uf}[theorem]{Useful Fact}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{recall}[theorem]{Recall}
+\newtheorem{fact}[theorem]{Fact}
+%\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}}
+%
+% Convention for citations is authors' initials followed by the year.
+% For example, to cite a paper by Leighton and Maggs you would type
+% \cite{LM89}, and to cite a paper by Strassen you would type \cite{S69}.
+% (To avoid bibliography problems, for now we redefine the \cite command.)
+% Also commands that create a suitable format for the reference list.
+\begin{comment}
+\renewcommand{\cite}[1]{[#1]}
+\def\beginrefs{\begin{list}%
+        {[\arabic{equation}]}{\usecounter{equation}
+         \setlength{\leftmargin}{2.0truecm}\setlength{\labelsep}{0.4truecm}%
+         \setlength{\labelwidth}{1.6truecm}}}
+\def\endrefs{\end{list}}
+\def\bibentry#1{\item[\hbox{[#1]}]}
+\end{comment}
+
+%Use this command for a figure; it puts a figure in wherever you want it.
+%usage: \fig{NUMBER}{SPACE-IN-INCHES}{CAPTION}
+\newcommand{\fig}[3]{
+			\vspace{#2}
+			\begin{center}
+			Figure \thelecnum.#1:~#3
+			\end{center}
+}
+
+\par Template adapted from CMU's 10725 Fall 2012 Optimization course
+taught by Geoff Gordon and Ryan Tibshirani.
+%%
+
+\pagebreak
+\title{Linear Algebra Review}
+\maketitle
+\lecture{lec}{Intro}{}{Monday, Aug 31, 2015}
+\setcounter{section}{0}
+\section{Concepts}
+\begin{definition}
+  Column Space: In linear algebra, the column space C(A) of a matrix A
+  (sometimes called the range of a matrix) is the set of all possible
+  linear combinations of its column vectors.
+\end{definition}
+A matrix with n columns and m rows corresponds to n vectors in
+m-dimensional space.
+
+Linear equations lead to geometry of planes.  Intersection of planes
+leads to lines: in three dimensions a line requires two equations; in
+a n dimensional space it will require $n - 1$.
+
+There are two ways of looking at a system of linear equation: from
+rows or from columns.
+\begin{itemize}
+\item Row picture: Intersection of planes
+
+  If looking at rows, each row is a plain and their intersection is
+  the solution. For an n-equation-n-variable system of equations, each
+  equation is a $n - 1$ dimensional plain in a n dimensional
+  space. For example, $2u + v + w = 10$ is a 2D plain in a 3D space.
+
+  The first equation produces an $(n - 1)$-dimensional plane in n
+  dimensions, The second plane intersects it (we hope) in a smaller
+  set of ``dimension $n - 2$.'' Assuming all goes well, every new
+  plane (every new equation) reduces the dimension by one. At the end,
+  when all n planes are accounted for, the intersection has dimension
+  zero. It is a point, it lies on all the planes, and its coordinates
+  satisfy all n equations. It is the solution!
+
+\item Col picture: Combination of columns
+
+  If looking at columns, the problem of solving the system of linear
+  equations becomes to find the combination of the column vectors on
+  the left side that produces the vector on the right side. The
+  co-efficient of each variable is considered as a point in
+  n-dimensional space, which is also a vector. The multipliers of
+  vectors that does the job is also the point where in the row picture
+  all plane intersects.
+    
+  \begin{definition}
+    Linear combination of vectors: \\vectors are multiplied by numbers
+    and then added. The result is called a linear combination.
+  \end{definition}
+    
+\end{itemize}
+\begin{definition}
+  Singular cases: no solution or infinite solution 
+\\Non-singular case:
+  there is one solution to the system of equations.
+\end{definition}
+\begin{itemize}
+\item No solution: Inconsistent equations results in no solution.
+
+  For row picture, this happens when two or planes are parallel, or
+  the intersection line of two planes is parallel to other planes.
+    
+  For column picture, this happens when all vectors are in the same
+  plane but the target vector is not in the plane.
+\item Infinite many solution
+
+  For row picture, when all planes intersects in one line, or even,
+  when all planes are the same, there are infinitely many solutions.
+    
+  For column picture, this happens when all vectors are in the same
+  plane and the target vector is also in the same plane.
+\end{itemize}
+If the n planes have no point in common, or infinitely many points,
+then the n columns lie in the same plane
+
+\section{Gaussian Elimination}
+The algorithm:
+\begin{verbatim}
+Subtracting multiples of equation 1 from equation 2 to n to eliminate
+the first variable
+
+Recurse on step 1 on the remaining
+\end{verbatim}
+The (forward) elimination produces a triangular system, the values on
+the hypotenuse is called \emph{pivots}. By definition, pivots cannot
+be zero.
+\begin{definition}
+  In the following example, there are 9 \emph{coefficients}, 3
+  \emph{unknowns}, 3 \emph{right-hand sides}
+  \begin{align*}
+    2u + v + w &= 5\\
+    4u - 6v &= -2\\
+    -2u + 7v + 2w &= 9
+  \end{align*}
+\end{definition}
+\begin{definition}
+  Square Matrix: \\For a coefficient matrix, when the number of
+  unknowns equals the number of equations.
+\end{definition}
+\begin{definition}inner product:\\
+  The number produced from the multiplication of a row vector and a
+  column vector.
+\end{definition}
+There are two ways of thinking about the multiplication of $Ax$: 
+\begin{itemize}
+\item n inner product, one for each row.
+\item a combination of columns in A: Ax is a combination of the
+  columns of A. The coefficients are the components of x
+\end{itemize}
+\rmk The notation $x = (2, 5, 0)$ is equivalent to $x = [2 \;5 \;0]^T$
+\begin{definition}
+  The identity matrix I has 1s on the diagonal and 0s everywhere else
+\end{definition}
+\begin{definition}
+  The elementary matrix $E_{ij}$ subtracts $l$ times row j from row i.
+\end{definition}
+\begin{theorem}
+  Matrix multiplication is associative: $(AB)C = A(BC)$\\
+  Matrix multiplication is distributive: $A(B + C) = AB + AC$.
+  Matrix multiplication is NOT commutative
+\end{theorem}
+\begin{theorem}
+  The i, j entry of AB is the inner product of the ith row of A and
+  the jth column of B.
+  
+  Every column of AB is a combination of the columns of A. Column i is
+  the combination columns in A with the ith column in B as
+  multipliers: column j of AB $=$ A times (column j of B)
+  
+  Each row of AB is a combination of the rows of B: 
+
+  row i of AB $=$ (row i of A) times B.
+\end{theorem}
+\begin{definition}Row exchange matrix:\\
+  $$\begin{bmatrix}
+  0 & 1\\
+  1 & 0\\
+  \end{bmatrix}
+  \begin{bmatrix}
+  2 & 3\\
+  7 & 8\\
+  \end{bmatrix}
+  = 
+  \begin{bmatrix}
+  7 & 8\\
+  2 & 3\\
+  \end{bmatrix}
+  $$
+
+\end{definition}
+\rmk{the product of lower triangular matrices is again lower
+  triangular}
+\section{Summations}
+\begin{itemize}
+\item $1^2 + 2^2 + \dots + n^2 = {n(n + 1)(2n + 1) \over 6}$
+\item 
+\item 
+\item 
+\item 
+\end{itemize}
+\bibliographystyle{plain}
+\pagebreak
+\bibliography{Bibliography}
+\end{document}

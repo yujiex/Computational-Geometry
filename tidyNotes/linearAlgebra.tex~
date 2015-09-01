@@ -1,0 +1,174 @@
+%You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[12pt]{article}
+
+\usepackage{fancyhdr, amsmath, enumerate, url, ulem, polynom, subfig, amssymb, amsthm, verbatim, graphicx,hyperref, booktabs, comment}
+\usepackage{proof}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+\noindent{\bf #1: #2} \vspace{0.5em}
+\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Yujie Xu}
+\newcommand{\myandrew}{yujiex@andrew.cmu.edu}
+\newcommand{\myhwnum}{00}
+
+\newcommand{\fref}[1]{Figure \ref{#1}}
+\newcommand{\tref}[1]{Table \ref{#1}}
+\newcommand{\eref}[1]{Equation \ref{#1}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+ 
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{Lecture Note}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{15-456}}
+
+%
+% The following macro is used to generate the header.
+%
+\newcommand{\lecture}[4]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \stepcounter{#1}
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+      \vbox{\vspace{2mm}
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill Lecture \arabic{#1}: #2  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {\it \hfill Instructor: #3 \quad Notes taken: Yujie Xu\hfill}}      
+       \hbox to 6.28in { {\it  \hfill Date: #4 \hfill} }
+      \vspace{2mm}}
+   \end{center}
+   \markboth{Lecture #1: #2}{Lecture \arabic{#1}: #2}
+}
+
+\newcommand{\hw}[4]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \stepcounter{#1}
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+      \vbox{\vspace{2mm}
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill HW \arabic{#1}: #2  \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {\it \hfill Instructor: #3 \quad Notes taken: Yujie Xu\hfill}}      
+       \hbox to 6.28in { {\it \hfill Date: #4} }
+      \vspace{2mm}}
+   \end{center}
+   \markboth{Lecture #1: #2}{Lecture \arabic{#1}: #2}
+}
+%
+% The following is my command for comments
+%
+\newcommand{\claim}[1]{\par {\bf Claim }{#1}}
+\newcommand{\subclaim}[1]{\par {\bf Subclaim }{#1}}
+\newcommand{\hp}[1]{\par {\bf HP: }{#1}}
+\newcommand{\note}[1]{\par {\bf Note: }{#1}}
+\newcommand{\rmk}[1]{\par {\bf Remark: }{#1}}
+\newcommand{\que}[1]{\par {\bf Question: }{\it #1}}
+\newcommand{\ans}[1]{\par {\bf Answer: }{\it #1}}
+\newcommand{\eg}[1]{\par {\bf Examples: }{#1}}
+\newcommand{\wn}[1]{\par {\bf Warning: }{#1}}
+
+\begin{document}
+
+\medskip                        % Skip a "medium" amount of space
+                                % (latex determines what medium is)
+                                % Also try: \bigskip, \littleskip
+
+%
+% The following commands set up the lecnum (lecture number)
+% counter and make various numbering schemes work relative
+% to the lecture number.
+%
+\newcounter{lec}
+\renewcommand{\thepage}{\thelec-\arabic{page}}
+\renewcommand{\thesection}{\thelec.\arabic{section}}
+\renewcommand{\theequation}{\thelec.\arabic{equation}}
+\renewcommand{\thefigure}{\thelec.\arabic{figure}}
+\renewcommand{\thetable}{\thelec.\arabic{table}}
+
+% Use these for theorems, lemmas, proofs, etc.
+\newtheorem{theorem}{Theorem}[lec]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{uf}[theorem]{Useful Fact}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{recall}[theorem]{Recall}
+\newtheorem{fact}[theorem]{Fact}
+%\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}}
+%
+% Convention for citations is authors' initials followed by the year.
+% For example, to cite a paper by Leighton and Maggs you would type
+% \cite{LM89}, and to cite a paper by Strassen you would type \cite{S69}.
+% (To avoid bibliography problems, for now we redefine the \cite command.)
+% Also commands that create a suitable format for the reference list.
+\begin{comment}
+\renewcommand{\cite}[1]{[#1]}
+\def\beginrefs{\begin{list}%
+        {[\arabic{equation}]}{\usecounter{equation}
+         \setlength{\leftmargin}{2.0truecm}\setlength{\labelsep}{0.4truecm}%
+         \setlength{\labelwidth}{1.6truecm}}}
+\def\endrefs{\end{list}}
+\def\bibentry#1{\item[\hbox{[#1]}]}
+\end{comment}
+
+%Use this command for a figure; it puts a figure in wherever you want it.
+%usage: \fig{NUMBER}{SPACE-IN-INCHES}{CAPTION}
+\newcommand{\fig}[3]{
+			\vspace{#2}
+			\begin{center}
+			Figure \thelecnum.#1:~#3
+			\end{center}
+}
+
+\par Template adapted from CMU's 10725 Fall 2012 Optimization course
+taught by Geoff Gordon and Ryan Tibshirani.
+%%
+
+\pagebreak
+\title{Linear Algebra Review}
+\maketitle
+\lecture{lec}{Intro}{}{Monday, Aug 31, 2015}
+\setcounter{section}{0}
+\section{Concepts}
+\begin{itemize}
+\item Column Space: In linear algebra, the column space C(A) of a
+  matrix A (sometimes called the range of a matrix) is the set of all
+  possible linear combinations of its column vectors.
+\item matrix A has n columns and m rows. Linear algebra moves steadily
+  to n vectors in m-dimensional space.
+\item Linear equations lead to geometry of planes
+\item n three dimensions a line requires two equations; in n
+  dimensions it will require $n - 1$.
+
+\item The first equation produces an $(n - 1)$-dimensional plane in n
+  dimensions, The second plane intersects it (we hope) in a smaller
+  set of ``dimension $n - 2$.'' Assuming all goes well, every new
+  plane (every new equation) reduces the dimension by one. At the end,
+  when all n planes are accounted for, the intersection has dimension
+  zero. It is a point, it lies on all the planes, and its coordinates
+  satisfy all n equations. It is the solution!
+\item If the n planes have no point in common, or infinitely many
+  points, then the n columns lie in the same plane.
+\end{itemize}
+\bibliographystyle{plain}
+\pagebreak
+\bibliography{Bibliography}
+\end{document}
