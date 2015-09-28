@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.7)  1 SEP 2015 11:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.7)  1 SEP 2015 18:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -475,24 +475,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 280--281
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
+
+ []
+
+
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 301.
+(amsmath)                 on input line 305.
 
 [3]
 No file linearAlgebra.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 314.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 314.
 (./linearAlgebra.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 314.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 314.
 Package rerunfilecheck Info: File `linearAlgebra.out' has not changed.
 (rerunfilecheck)             Checksum: 549A17CCFBBA91FE5A33AD4A63F40F92;143.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 314.
  ) 
 Here is how much of TeX's memory you used:
- 8005 strings out of 495028
- 117976 string characters out of 6181498
+ 8006 strings out of 495028
+ 117988 string characters out of 6181498
  200753 words of memory out of 5000000
  11099 multiletter control sequences out of 15000+600000
  13070 words of font info for 51 fonts, out of 8000000 for 9000
@@ -509,10 +514,10 @@ blic/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb>
-Output written on linearAlgebra.pdf (5 pages, 127859 bytes).
+Output written on linearAlgebra.pdf (5 pages, 128173 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
- 20 named destinations out of 1000 (max. 500000)
+ 102 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
+ 21 named destinations out of 1000 (max. 500000)
  25 words of extra memory for PDF output out of 10000 (max. 10000000)
 
