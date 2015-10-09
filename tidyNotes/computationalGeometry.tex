@@ -967,7 +967,7 @@ P = 1$}
 \rmk{points inside the unit sphere is sent to the outside}
 \rmk{points outside the unit sphere is sent to the inside}
 
-\lecture{lec}{Guarding a Polygon}{Gary Miller}{Friday, Sep 25, 2015}
+\lecture{lec}{Guarding a Polygon}{Gary Miller}{Friday, 2015}
 \section{Guarding a Polygon}
 \begin{itemize}
 \item Input: Polygon P.
@@ -982,12 +982,92 @@ P = 1$}
   For a polygon P with n vertices, ${n \over 3}$ guards are necessary
   (\fref{fig:guard}) and sufficient to cover P.
 \end{theorem}
+\section{$n/3$ - guard Alg}
+\begin{verbatim}
+P' = Triangulate P
+3-color P
+    construct the geometric dual of T
+    3-color P by traversing in a BF manner, color new vertices with the missing color.
+Pick the least used color
+//note: any color will do, but we want the least number of guards.
+\end{verbatim}
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.5\linewidth]{guard.png}
   \caption{The case when $3/n$ guards are needed}
   \label{fig:guard}
 \end{figure}
+
+Note, the only non-linear time step is the ``Triangulate P'' step.
+
+\section{2D Triangulation}
+The known fastest algorithm is $O(n)$, the sweepline ALG is $O(n \log
+n)$ and there is a $O(n \log ^* n)$ one (the Seidel's Algorithm).
+
+(@@ BOOKMARK)
+\lecture{lec}{Fundamental Theorems for Convex Set}{Gary Miller}{Monday, Sep 28, 2015}
+\lecture{lec}{Triangulating a Polygon}{Gary Miller}{Monday, Sep 28, 2015}
+\begin{definition}
+  PSLG: Planar Straightline Graph, an embedding of a planar graph in
+  the plane such that its edges are mapped into straight line segments
+  (Wikipedia).
+\end{definition}
+\begin{definition}
+  \emph{Polygonal chain}: PSLG consisting of a simple cycle P.
+\end{definition}
+\claim{A polygon chain has a unique interior}
+\begin{definition}
+  Polygon: polygonal chain $+$ interior
+\end{definition}
+\begin{definition}
+  \emph{Triangulation}: addition of line segment so that
+  \begin{enumerate}
+  \item It is stil PSLG
+  \item Interior is decomposed into triangles
+  \end{enumerate}
+\end{definition}
+\begin{theorem}
+  Every simple polygon can be triangulated
+\end{theorem}
+\begin{proof}
+  Input: let m be the number of segments on the n points.
+  \begin{itemize}
+  \item Base case: $n = 3$
+    
+    Assuming there are no 180 degree, then we are done.
+  \item Inductive case (a little tricky) $n > 3$, 
+
+    assume it holds for $m < n$, then
+    
+    Let $v$ be the left most point with its neighbors $w$ and $u$.
+    \begin{itemize}
+    \item If $[u, w]$ interior to the polygon: we get two polygon:
+      $P_1 = Triangle(u, v, w), P_2 = rest$, with $|P_1| = 3$ and
+      $|P_2| = n - 1$, using IH to triangulate $P_2$
+    \item Otherwise,
+      $S = \{v' \mid v' \text{interior to } Triangle(u, v, w)\} \neq
+      \emptyset$,
+      let $v'$ be the left most of S. $[v, v']$ separates the polygon
+      into $P_1, P_2$, with $|P_1| < n \land |P_2| < n$, one can
+      triangulate the two.
+    \end{itemize}
+  \end{itemize}
+\end{proof}
+\begin{theorem}
+  Not every simple polygonal surface (polytope: flat sides) in 3D can
+  be decomposed into tetrahedron.
+\end{theorem}
+
+Here is a counter example.
+
+For a prism with twisted top, let $B = face(a, b, c)$, consider the
+tetrahedreon with face B, one need to find the missing point. It could
+be $x$ or $y$. It is not x, because edge $[a, x]$ is out of the
+prism. It is not y, because $[b, y]$ is out of the prism (?? what does
+this ultimately show ??)
+
+\rmk{In general: test if a polygonal surface is decomposable is NP-hard}
+
 \bibliographystyle{plain} \pagebreak
 
 \bibliography{Bibliography}
