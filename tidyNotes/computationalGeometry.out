@@ -16,16 +16,22 @@
 \BOOKMARK [3][-]{subsubsection.5.1.2}{Correctness \(Termination\)}{subsection.5.1}% 16
 \BOOKMARK [3][-]{subsubsection.5.1.3}{Cost}{subsection.5.1}% 17
 \BOOKMARK [3][-]{subsubsection.5.1.4}{Random Incremental CH}{subsection.5.1}% 18
-\BOOKMARK [1][-]{section.6}{Introduction}{}% 19
-\BOOKMARK [1][-]{section.7}{1D LP}{}% 20
-\BOOKMARK [1][-]{section.8}{2D LP}{}% 21
-\BOOKMARK [2][-]{subsection.8.1}{Procedure}{section.8}% 22
-\BOOKMARK [2][-]{subsection.8.2}{Correctness}{section.8}% 23
-\BOOKMARK [2][-]{subsection.8.3}{Timing}{section.8}% 24
-\BOOKMARK [1][-]{section.9}{Finding the Bounding Box}{}% 25
-\BOOKMARK [2][-]{subsection.9.1}{Definitions and theorems}{section.9}% 26
-\BOOKMARK [2][-]{subsection.9.2}{Procedure to find d}{section.9}% 27
-\BOOKMARK [1][-]{section.10}{General Intro}{}% 28
-\BOOKMARK [1][-]{section.11}{Definitions}{}% 29
-\BOOKMARK [1][-]{section.12}{Guarding a Polygon}{}% 30
-\BOOKMARK [1][-]{section.13}{n/3 - guard Alg}{}% 31
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 19
+\BOOKMARK [1][-]{section.2}{1D LP}{}% 20
+\BOOKMARK [1][-]{section.3}{2D LP}{}% 21
+\BOOKMARK [2][-]{subsection.3.1}{Procedure}{section.3}% 22
+\BOOKMARK [2][-]{subsection.3.2}{Correctness}{section.3}% 23
+\BOOKMARK [2][-]{subsection.3.3}{Timing}{section.3}% 24
+\BOOKMARK [1][-]{section.4}{Finding the Bounding Box}{}% 25
+\BOOKMARK [2][-]{subsection.4.1}{Definitions and theorems}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.2}{Procedure to find d}{section.4}% 27
+\BOOKMARK [1][-]{section.1}{General Intro}{}% 28
+\BOOKMARK [1][-]{section.2}{Definitions}{}% 29
+\BOOKMARK [1][-]{section.1}{Guarding a Polygon}{}% 30
+\BOOKMARK [1][-]{section.2}{n/3 - guard Alg}{}% 31
+\BOOKMARK [1][-]{section.3}{2D Triangulation}{}% 32
+\BOOKMARK [1][-]{section.1}{Types of topological information}{}% 33
+\BOOKMARK [1][-]{section.2}{Group Theory related definitions}{}% 34
+\BOOKMARK [1][-]{section.3}{View , R as triangles}{}% 35
+\BOOKMARK [1][-]{section.4}{Barycentric Subdivision}{}% 36
+\BOOKMARK [2][-]{subsection.4.1}{Return to poset}{section.4}% 37
