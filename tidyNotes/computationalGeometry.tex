@@ -1231,9 +1231,279 @@ Assume
 \claim{1 to 1 correspondence between numbered triangles and paths in
   the Poset}
 \begin{definition}
-  cell-tuple $(V, E, F)$ s.t. $V \in \partial E \land E \in \partial
-  F$, $(\bot, \land, E, F, T)$ (Boolean Algebra ??)
+  cell-tuple $(V, E, F)$ s.t.
+  $V \in \partial E \land E \in \partial F$, $(\bot, V, E, F, T)$
+  (Boolean Algebra ? no, it is just the elements deciding a cell
+  structure)
 \end{definition}
+Looking at the neighbors of a triangle on the left (there are 3),
+there is a on the right corresponding to switching a vertex, an edge
+or a face regarding the original path.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{triAndPath2.png}
+  \caption{Triangle and Path Correspondence}
+  \label{fig:triAndPath2}
+\end{figure}
+
+Move on to pinched cases: 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{pinchEdge.png}
+  \caption{When an edge is pinched}
+  \label{fig:pinchEdge}
+\end{figure}
+\begin{enumerate}[1)]
+\item If we have pinched edge (\fref{fig:pinchEdge}), we can use
+  double edge to solve the problem (\fref{fig:pinchEdgeDouble}).
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{pinchEdgeDouble.png}
+  \caption{When an edge is pinched}
+  \label{fig:pinchEdgeDouble}
+\end{figure}
+\item If we have pinched face, we can also double edges to make the
+  number of triangles on the left equals the number of triangles on
+  the right (\fref{fig:pinchFace}).
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.5\linewidth]{pinchFace.png}
+  \caption{When a face is pinched}
+  \label{fig:pinchFace}
+\end{figure}
+\end{enumerate}
+\section{Formal Structure}
+\begin{definition}(Map) $M = (\Sigma, \alpha_0, \dots, \alpha_d)$
+  where
+  \begin{enumerate}[1)]
+  \item $\Sigma$ is a finite set and
+    $\alpha_0, \dots, \alpha_d \in Sym(\Sigma)$
+  \item $\alpha_i^2 = identity$ for $0 \leq i \leq d$
+  \item $\alpha_i$ fpf for $0 \leq i < d$ (fp of $\alpha_d$ is the boundaries.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}(Commuting-Map)
+  \begin{enumerate}[1)]
+  \item M is a map
+  \item $\alpha_i\alpha_j = \alpha_j\alpha_i, i + 2 \leq j$
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}
+  $G_i^j = <\alpha_i, \dots, \alpha_j>, i \leq j$
+\end{definition}
+\begin{definition}(Cell-Map)
+  \begin{enumerate}[1)]
+  \item M is a Commuting-Map
+  \item $\forall 0 < i < d, \alpha \in G_0^{i - 1}, \beta \in G_{i +
+      1}^d, \alpha\beta(\sigma):sigma \implies \alpha(\sigma) =
+    \beta(\sigma) = \sigma $(??) (Orthogonality)
+  \end{enumerate}
+\end{definition}
+\begin{definition}(Cell-chain: a sequence of 1-d numbered simplices
+  $\gamma_1, \dots, \gamma_k$
+  \begin{enumerate}[1)]
+  \item $\gamma_i \cap \gamma_{i + 1} = 0-simplex$ (hp: no overlap)
+  \item Each $\gamma_i$ is consecutively numbered.
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=0.5\linewidth]{cellChain.png}
+      \caption{Cell chain}
+      \label{fig:cellChain}
+    \end{figure}
+  \end{enumerate}
+\end{definition}
+\begin{theorem}
+  If M is a cell-map with complex $\mathfrak{C}$, then $\exists$ 1 to 1
+  correspondence between cell-chains and d-simplices.
+\end{theorem}
+\begin{theorem}
+  If $\mathfrak{C}$ is a commmuting-map M, then M is a cell-map iff
+  $\exists$ 1 to 1 between cell-chains and d-simplices.
+\end{theorem}
+
+\section{From the paper of Brisson-93}
+``Many computational models ... describe objects as a set of simple
+building blocks connected by some proximity relation.''
+
+``The class of "subdivided d-manifolds" gives such a topological
+framework''
+
+``basic building blocks in subdivided manifolds are
+k-dimensional cells, where $0 < k \leq d.$''
+
+Topological representations are required to ``represent topological
+structure up to equivalence''
+
+Ordering is also an important property to be included in a
+representation.
+
+To ``have access to the topological dual'' is also handy.
+
+``The dual of a subdivided d-dimensional object is a subdivision of the
+same object produced by replacing every k-dimensional cell by a (d -
+k)-dimensional cell, while maintaining the corresponding incidence
+relations.''
+\lecture{lec}{2D closest pair using hashing and randomization}{Gary
+  Miller}{Wed, Oct 14, 2015}
+\section{2D Closest Pair}
+\begin{enumerate}
+\item Problem definition (the Closest Pair Problem)
+  \begin{itemize}
+  \item Input: $P \subseteq \mathbb{R}^2, P \subseteq UnitBox, |P| = n$
+  \item Output:
+    $CP(P) = \min\{p, q \in P \land p \neq q \mid ||p - q||\}$
+  \end{itemize}
+\item Solve it by hashing: placing points into boxes
+  \begin{itemize}
+  \item Idea: partition the UnitBox into boxes of
+    $\alpha \times \alpha$
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=0.5\linewidth]{cpHashing.png}
+      \caption{Construction of the hashing grid}
+      \label{fig:cpHashing}
+    \end{figure}
+  \item The problem is there will be too many boxes to store in
+    memory. Say if $\alpha = 10^{-20}$, then there will be
+    ${1 \over \alpha^2} = 10^{40}$ boxes.
+    
+    To solve this problem, make the names of the boxes be the key
+    space (i.e. for each box, the key is $(x, y)$, with
+    $x, y \in [1, 10^{20}$ x, y are integers. Make a dynamic hash
+    table of size $O(n)$.
+  \end{itemize}
+\begin{theorem}
+  Hash points ``into'' its box is $O(1)$ time.
+\end{theorem}
+\begin{definition}
+  Let B be a box in $G_\alpha$, define the \emph{extended neighbor} of
+  B be the nine-box group centered at B.
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{extB.png}
+    \caption{Extended Box of B}
+    \label{fig:extB}
+  \end{figure}
+\end{definition}
+
+\begin{lemma}
+  Box B with side length $\alpha$, if
+  $\alpha \leq CP(P), P \subseteq B$ then $|P| \leq 4$
+\end{lemma}
+\begin{proof}
+  Split B into 4 ${\alpha \over 2} \times{\alpha \over 2}$
+  boxes. $diameter(B_i) = {\alpha \over \sqrt{2}} < \alpha$, so each
+  sub-divided box contains at most 1 point (\fref{fig:packing}).
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{packing.png}
+    \caption{Packing lemma sub-divided boxes}
+    \label{fig:packing}
+  \end{figure}
+\end{proof}
+
+\item Specification of a test function:
+\[
+  Test(\alpha, P) =
+  \begin{cases}
+    \beta &  \text{ if } \exists p \neq q \in P, ||p - q|| = \beta < \alpha \\
+    \alpha & \text{ if } CP(P) = \alpha \\
+    False &Otherwise
+  \end{cases}
+\]
+\item Procedure of the test function:
+  \begin{enumerate}[1)]
+  \item Make hash table $H_\alpha$ for the grid $G_\alpha$
+  \item ``Insert'' $P_1$ into $G_\alpha$
+  \item For $i = 2$ to $n$, Let $P_i = \{p_1, \dots, p_{i - 1}\}$
+    \begin{enumerate}[a)]
+    \item Insert $p_i$ into its box B (hash it)
+    \item Compute $\beta = \min(distance(p_i, P_i \cap Ext(B))$ (check
+      if $p_i$ achieves smaller distance with points in its extended
+      box)
+    \item If $\beta < \alpha$ return $CP(P) \leq \beta < \alpha$
+      (*)(restart)
+
+      \note{Distance between $p_i$ and points not in $Ext(B)$ must be
+        greater than $\alpha$. By packing lemma, there will be at most
+        one point in each sub box of the $Ext(B)$}
+    \item If $\beta = \alpha$, set $Flag = true$
+    \end{enumerate}
+  \item If $Flag$ then return $CP(P) = \alpha$ \\Else return
+    $CP(P) > \alpha$
+  \end{enumerate}
+  \claim{Test is linear time and it correctly test if
+    $CP(P) \leq \alpha$ and returns the distance if there is one.}
+  \item Note, the procedure of test only checks the distance but not
+    return the pair of points. Well make a modified version of the
+    procedure ($\bar{CP}$) and make it return the actual pair of
+    points.
+  \item Procedure of $\bar{CP(P)}$
+    \begin{enumerate}[1)]
+    \item Base case: If $n \leq 4$, check all pairs.
+    \item Randomly permute $P = \{p_1, \dots, p_n\}$, set $\alpha
+      \impliedby 1$
+    \item If $Test(\alpha, P)$ returns $\beta < \alpha$, then set
+      $\alpha \impliedby \beta$; repeat 3) (*)(restart)
+    \item Return $\alpha$
+    \end{enumerate}
+  \item Correctness of $\bar{CP(P)}$
+    \begin{itemize}
+    \item If $n \leq 4$, by packing lemma, we're done.
+    \item If $n > 4$, by packing lemma, we know min distance $< 1$
+    \end{itemize}
+  \item Runtime of $\bar{CP(P)}$ is linear in expectation.
+    \begin{proof}(by backwards analysis (common trick for randomized algorithm))
+
+      Define $\alpha_i$ be the random variable:
+      $$\alpha_i = CP(p_1, \dots, p_i), i \geq 2$$ 
+
+      \note{$\alpha_{i + 1} < \alpha_i$} 
+      \note{(*)(restart) step is only
+        executed when $\alpha_i < \alpha_{i - 1}$, we're trying to
+        figure out the probability of $\alpha_i < \alpha_{i - 1}$, we
+        break into cases. We analyze the process backwards and try to
+        find the probability of removing a random point in $P = \{p_1,
+        \dots, p_i\}$ that causes the min-distance-so-far to change.}
+        \begin{enumerate}[{Case }1.]
+        \item $\exists!$ closest pair in $\{p_1, \dots, p_i\}$
+          
+          Say the closest pair is some $p_j, p_k$ then we will only
+          restart if we remove $i = j$ or $i = k$, so $Prob(\alpha_i <
+          \alpha_{i - 1}) = {2 \over i}$
+        \item There are more then two closest pairs in
+          $\{p_1, \dots, p_i\}$
+          
+          \begin{itemize}
+          \item Non-disjoint case(\fref{fig:restart21}): we'll restart
+            for $i = j$,
+            $Prob(\alpha_i < \alpha_{i - 1}) = {1 \over i}$
+          \item Disjoint case (\fref{fig:restart22}): we'll never
+            restart.  $Prob(\alpha_i < \alpha_{i - 1}) = 0$
+            \begin{figure}[h!]
+              \centering
+              \includegraphics[width=0.5\linewidth]{restart21.png}
+              \caption{Non-disjoint case}
+              \label{fig:restart21}
+            \end{figure}
+            \begin{figure}[h!]
+              \centering
+              \includegraphics[width=0.5\linewidth]{restart22.png}
+              \caption{Disjoint case}
+              \label{fig:restart22}
+            \end{figure}
+          \end{itemize}
+          For both cases, we have no more than ${2 \over i}$ chance to
+          restart, with each restart cost $O(i)$, so the total
+          expected work is no greater
+          than:$$O(\sum_{i = 1}^n{2 \over i} \cdot i) = O(n)$$
+        \end{enumerate}
+      \end{proof}
+\end{enumerate}
+\section{K-enclosing disk}
 
 \bibliographystyle{plain} \pagebreak
 

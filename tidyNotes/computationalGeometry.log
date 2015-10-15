@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.7)  12 OCT 2015 09:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.7)  14 OCT 2015 22:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -526,7 +526,7 @@ licate ignored
 l.549 \section{Quick Sort and Backward Analysis}
                                                 
 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
-/dart.png, id=218, 366.61969pt x 129.48375pt>
+/dart.png, id=225, 366.61969pt x 129.48375pt>
 File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
 mages/dart.png Graphic file (type png)
 
@@ -544,7 +544,7 @@ Package amsmath Warning: Foreign command \over;
 [2 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/ima
 ges/dart.png>]
 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
-/stitch.png, id=224, 398.48875pt x 438.63875pt>
+/stitch.png, id=231, 398.48875pt x 438.63875pt>
 File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
 mages/stitch.png Graphic file (type png)
 
@@ -571,7 +571,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 671--672
 [4 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/ima
 ges/stitch.png (PNG copy)>]
 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
-/randIncrWorst.png, id=235, 231.86626pt x 167.87718pt>
+/randIncrWorst.png, id=242, 231.86626pt x 167.87718pt>
 File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
 mages/randIncrWorst.png Graphic file (type png)
 
@@ -588,7 +588,7 @@ entifier (name{section.1}) has been already used, duplicate ignored
 l.747 \section{Introduction}
                             
 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
-/hplane.png, id=250, 333.49594pt x 167.12437pt>
+/hplane.png, id=257, 333.49594pt x 167.12437pt>
 File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
 mages/hplane.png Graphic file (type png)
 
@@ -600,7 +600,7 @@ eometry/tidyNotes/images/hplane.png used on input line 778.
  [1 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/im
 ages/hplane.png>]
 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
-/bbox.png, id=258, 169.38281pt x 110.66344pt>
+/bbox.png, id=265, 169.38281pt x 110.66344pt>
 File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
 mages/bbox.png Graphic file (type png)
 
@@ -670,7 +670,7 @@ es with the missing color.[]
 
 
 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
-/guard.png, id=300, 434.37282pt x 149.8097pt>
+/guard.png, id=307, 434.37282pt x 149.8097pt>
 File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
 mages/guard.png Graphic file (type png)
 
@@ -693,7 +693,7 @@ ed, duplicate ignored
 l.1088 \section{Types of topological information}
                                                  
 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
-/boundaryInfo.png, id=328, 241.65282pt x 124.96687pt>
+/boundaryInfo.png, id=335, 241.65282pt x 124.96687pt>
 File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
 mages/boundaryInfo.png Graphic file (type png)
 
@@ -704,7 +704,7 @@ eometry/tidyNotes/images/boundaryInfo.png used on input line 1093.
 (pdftex.def)             Requested size: 140.84256pt x 72.8374pt.
 
 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
-/posettt.png, id=329, 109.91063pt x 193.47281pt>
+/posettt.png, id=336, 109.91063pt x 193.47281pt>
 File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
 mages/posettt.png Graphic file (type png)
 
@@ -719,7 +719,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
-/posettt2.png, id=330, 390.70969pt x 149.8097pt>
+/posettt2.png, id=337, 390.70969pt x 149.8097pt>
 File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
 mages/posettt2.png Graphic file (type png)
 
@@ -766,7 +766,7 @@ as been already used, duplicate ignored
 l.1198 \section{Barycentric Subdivision}
                                         
 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
-/reflect.png, id=346, 216.81pt x 199.49532pt>
+/reflect.png, id=353, 216.81pt x 199.49532pt>
 File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
 mages/reflect.png Graphic file (type png)
 
@@ -786,7 +786,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 l.1218 \subsection{Return to poset}
                                    
 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
-/posetBack.png, id=361, 452.4403pt x 274.02374pt>
+/posetBack.png, id=368, 452.4403pt x 274.02374pt>
 File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
 mages/posetBack.png Graphic file (type png)
 
@@ -798,43 +798,203 @@ eometry/tidyNotes/images/posetBack.png used on input line 1227.
  [4 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/im
 ages/reflect.png> </media/yujiex/work/computationGeometry/Computational-Geometr
 y/tidyNotes/images/posetBack.png>]
-(./computationalGeometry.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1235.
- [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1235.
- (./computationalGeometry.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1235.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1235.
+</media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
+/triAndPath2.png, id=378, 602.25pt x 335.2525pt>
+File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
+mages/triAndPath2.png Graphic file (type png)
 
-Package rerunfilecheck Info: File `computationalGeometry.out' has not changed.
-(rerunfilecheck)             Checksum: A4A857CCAF466FE28FEF9909EAD9F678;2271.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1235.
+<use /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/im
+ages/triAndPath2.png>
+Package pdftex.def Info: /media/yujiex/work/computationGeometry/Computational-G
+eometry/tidyNotes/images/triAndPath2.png used on input line 1245.
+(pdftex.def)             Requested size: 234.73523pt x 130.6712pt.
+
+</media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
+/pinchEdge.png, id=379, 407.27156pt x 193.47281pt>
+File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
+mages/pinchEdge.png Graphic file (type png)
+
+<use /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/im
+ages/pinchEdge.png>
+Package pdftex.def Info: /media/yujiex/work/computationGeometry/Computational-G
+eometry/tidyNotes/images/pinchEdge.png used on input line 1253.
+(pdftex.def)             Requested size: 234.73523pt x 111.50874pt.
+
+</media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
+/pinchEdgeDouble.png, id=382, 264.23718pt x 186.6975pt>
+File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
+mages/pinchEdgeDouble.png Graphic file (type png)
+
+<use /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/im
+ages/pinchEdgeDouble.png>
+Package pdftex.def Info: /media/yujiex/work/computationGeometry/Computational-G
+eometry/tidyNotes/images/pinchEdgeDouble.png used on input line 1262.
+(pdftex.def)             Requested size: 234.73523pt x 165.85257pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+</media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
+/pinchFace.png, id=384, 577.15625pt x 313.17pt>
+File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
+mages/pinchFace.png Graphic file (type png)
+
+<use /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/im
+ages/pinchFace.png>
+Package pdftex.def Info: /media/yujiex/work/computationGeometry/Computational-G
+eometry/tidyNotes/images/pinchFace.png used on input line 1271.
+(pdftex.def)             Requested size: 234.73523pt x 127.36835pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{section.5}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1276 \section{Formal Structure}
+                                  [5 </media/yujiex/work/computationGeometry/Co
+mputational-Geometry/tidyNotes/images/triAndPath2.png> </media/yujiex/work/comp
+utationGeometry/Computational-Geometry/tidyNotes/images/pinchEdge.png>]
+</media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
+/cellChain.png, id=400, 268.75406pt x 204.765pt>
+File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
+mages/cellChain.png Graphic file (type png)
+
+<use /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/im
+ages/cellChain.png>
+Package pdftex.def Info: /media/yujiex/work/computationGeometry/Computational-G
+eometry/tidyNotes/images/cellChain.png used on input line 1312.
+(pdftex.def)             Requested size: 234.73523pt x 178.84709pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+LaTeX Font Info:    Try loading font information for U+euf on input line 1319.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [6 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
+mages/pinchEdgeDouble.png> </media/yujiex/work/computationGeometry/Computationa
+l-Geometry/tidyNotes/images/pinchFace.png (PNG copy)>] [7 </media/yujiex/work/c
+omputationGeometry/Computational-Geometry/tidyNotes/images/cellChain.png>]
+</media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
+/cpHashing.png, id=425, 463.7325pt x 204.01219pt>
+File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
+mages/cpHashing.png Graphic file (type png)
+
+<use /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/im
+ages/cpHashing.png>
+Package pdftex.def Info: /media/yujiex/work/computationGeometry/Computational-G
+eometry/tidyNotes/images/cpHashing.png used on input line 1365.
+(pdftex.def)             Requested size: 234.73523pt x 103.2697pt.
+
+</media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
+/extB.png, id=426, 252.945pt x 152.06813pt>
+File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
+mages/extB.png Graphic file (type png)
+
+<use /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/im
+ages/extB.png>
+Package pdftex.def Info: /media/yujiex/work/computationGeometry/Computational-G
+eometry/tidyNotes/images/extB.png used on input line 1386.
+(pdftex.def)             Requested size: 234.73523pt x 141.12256pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+</media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
+/packing.png, id=428, 268.75406pt x 105.39375pt>
+File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
+mages/packing.png Graphic file (type png)
+
+<use /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/im
+ages/packing.png>
+Package pdftex.def Info: /media/yujiex/work/computationGeometry/Computational-G
+eometry/tidyNotes/images/packing.png used on input line 1402.
+(pdftex.def)             Requested size: 234.73523pt x 92.05365pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[1 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/ima
+ges/cpHashing.png>] [2 </media/yujiex/work/computationGeometry/Computational-Ge
+ometry/tidyNotes/images/extB.png> </media/yujiex/work/computationGeometry/Compu
+tational-Geometry/tidyNotes/images/packing.png>]
+</media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
+/restart21.png, id=459, 311.66437pt x 110.66344pt>
+File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
+mages/restart21.png Graphic file (type png)
+
+<use /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/im
+ages/restart21.png>
+Package pdftex.def Info: /media/yujiex/work/computationGeometry/Computational-G
+eometry/tidyNotes/images/restart21.png used on input line 1488.
+(pdftex.def)             Requested size: 234.73523pt x 83.34857pt.
+
+</media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/images
+/restart22.png, id=460, 212.29312pt x 66.2475pt>
+File: /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/i
+mages/restart22.png Graphic file (type png)
+
+<use /media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/im
+ages/restart22.png>
+Package pdftex.def Info: /media/yujiex/work/computationGeometry/Computational-G
+eometry/tidyNotes/images/restart22.png used on input line 1494.
+(pdftex.def)             Requested size: 234.73523pt x 73.25456pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 </media/yujiex/work/computationGeometry/Computational-Geometry/tidyNotes/ima
+ges/restart21.png>] [4 </media/yujiex/work/computationGeometry/Computational-Ge
+ometry/tidyNotes/images/restart22.png>] (./computationalGeometry.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1511.
+ [5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1511.
+
+(./computationalGeometry.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1511.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1511.
+
+
+
+Package rerunfilecheck Warning: File `computationalGeometry.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `computationalGeometry.out':
+(rerunfilecheck)             Before: 07B29BED1A7CB4CE43F4A67D9E5CCCD8;2387
+(rerunfilecheck)             After:  ADB39E6628D5FF9A535D4C674D11197C;2490.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1511.
  ) 
 Here is how much of TeX's memory you used:
- 8253 strings out of 495028
- 124851 string characters out of 6181498
- 206995 words of memory out of 5000000
- 11216 multiletter control sequences out of 15000+600000
- 14624 words of font info for 57 fonts, out of 8000000 for 9000
+ 8391 strings out of 495028
+ 129876 string characters out of 6181498
+ 207585 words of memory out of 5000000
+ 11275 multiletter control sequences out of 15000+600000
+ 15332 words of font info for 60 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 44i,10n,43p,336b,488s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,10n,43p,336b,584s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pf
-b>
-Output written on computationalGeometry.pdf (30 pages, 452153 bytes).
+type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on computationalGeometry.pdf (37 pages, 1150644 bytes).
 PDF statistics:
- 450 PDF objects out of 1000 (max. 8388607)
- 390 compressed objects within 4 object streams
- 132 named destinations out of 1000 (max. 500000)
- 352 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 584 PDF objects out of 1000 (max. 8388607)
+ 503 compressed objects within 6 object streams
+ 196 named destinations out of 1000 (max. 500000)
+ 418 words of extra memory for PDF output out of 10000 (max. 10000000)
 
